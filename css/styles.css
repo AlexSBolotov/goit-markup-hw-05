@@ -50,29 +50,16 @@ img {
 address {
   font-style: normal;
 }
+button {
+  cursor: pointer;
+}
 
 /* ==================Components styles================== */
 
-.link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
 .list {
   padding: 0px;
   margin: 0px;
   list-style: none;
-}
-.button {
-  border-radius: 4px;
-  border: none;
-
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  cursor: pointer;
 }
 .container {
   width: 1158px;
@@ -94,6 +81,41 @@ address {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/* ==================!!Section!! - common for all sections================== */
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.section-title {
+  margin-top: 0;
+  margin-bottom: 72px;
+
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: capitalize;
+}
+.section-subtitle {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.section-text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  color: var(--paragraph-text-color);
+
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /* !!==================Header!!================== */
@@ -141,6 +163,10 @@ address {
   padding-top: 24px;
   padding-bottom: 24px;
 
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
   transition: color 250ms var(--timing-function);
 }
 .main-nav-link:hover,
@@ -187,41 +213,6 @@ address {
   color: var(--accent-color);
 }
 
-/* ==================!!Section!! - common for all sections================== */
-
-.section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-.section-title {
-  margin-top: 0;
-  margin-bottom: 72px;
-
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-align: center;
-  text-transform: capitalize;
-}
-.section-subtitle {
-  margin-top: 0;
-  margin-bottom: 8px;
-
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-}
-.section-text {
-  margin-top: 0;
-  margin-bottom: 0;
-
-  color: var(--paragraph-text-color);
-
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
-
 /* !!==================Hero!!================== */
 
 .hero {
@@ -251,9 +242,16 @@ address {
   line-height: 1.07;
   letter-spacing: 0.02em;
 }
-.hero .button {
+.hero-button {
   padding: 16px 32px;
   min-width: 169px;
+
+  border-radius: 4px;
+  border: none;
+
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 
   background-color: var(--accent-color-add);
   color: var(--white-color);
@@ -262,7 +260,7 @@ address {
 
   transition: background-color 250ms var(--timing-function);
 }
-.hero .button:hover {
+.hero-button:hover {
   background-color: var(--accent-color);
 }
 
@@ -353,20 +351,22 @@ address {
   display: flex;
   gap: 24px;
 }
-
 .customers-item {
+  flex-basis: calc((100%-120px) / 6);
+}
+.customers-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: calc((100%-120px) / 6);
+
   height: 88px;
   border: 1px solid var(--customers-color);
   border-radius: 4px;
 
   transition: border-color 250ms var(--timing-function);
 }
-.customers-item:hover,
-.customers-item:focus {
+.customers-link:hover,
+.customers-link:focus {
   border-color: var(--accent-color);
 }
 .customers-icon {
@@ -374,8 +374,8 @@ address {
 
   transition: fill 250ms var(--timing-function);
 }
-.customers-item:hover .customers-icon,
-.customers-item:focus .customers-icon {
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
   fill: var(--accent-color);
 }
 
@@ -422,6 +422,8 @@ address {
   letter-spacing: 0.02em;
 }
 .footer-socials-text {
+  margin: 0;
+
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -537,7 +539,12 @@ address {
 
 .portfolio-nav-btn {
   padding: 12px 24px;
+  border-radius: 4px;
   border: 1px solid var(--additional-not-white-color);
+
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 
   color: var(--accent-color-add);
   background-color: var(--not-white-color);
